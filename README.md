@@ -1,5 +1,9 @@
+<p align="center">
+    <img src="https://www.gcnt.net/inc/img/spigot/additions/git-header.png" alt="AdditionsPlus Logo">
+</p>
+
 # AdditionsPlus API
-![AdditionsPlus Logo](https://www.gcnt.net/inc/img/spigot/additions/header.png)
+
 The official API for AdditionsPlus: Everything your Minecraft server needs, in one plugin.  
 Create custom commands, menus, items, scoreboards, tablists, (animated) nametags, and much more!  
 
@@ -29,6 +33,7 @@ The AdditionsPlus API is hosted on our customly made NexusLite Maven Repository 
 ```
 
 ## Quick Links
+- [Developer Wiki](https://github.com/lukasvdgaag/AdditionsPlus-API/wiki)
 - [List of actions](https://www.gcnt.net/additionsplus/actions)
 - [SpigotMC resource page](https://www.gcnt.net/ap)
 - [MyGCNT resource page](https://my.gcnt.net/plugins/AdditionsPlus)
