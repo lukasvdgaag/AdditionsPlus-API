@@ -1,4 +1,5 @@
 # AdditionsPlus API
+![AdditionsPlus Logo](https://www.gcnt.net/inc/img/spigot/additions/header.png)
 The official API for AdditionsPlus: Everything your Minecraft server needs, in one plugin.  
 Create custom commands, menus, items, scoreboards, tablists, (animated) nametags, and much more!  
 
