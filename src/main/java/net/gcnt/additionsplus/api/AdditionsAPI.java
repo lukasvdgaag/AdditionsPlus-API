@@ -1,7 +1,9 @@
 package net.gcnt.additionsplus.api;
 
 import net.gcnt.additionsplus.api.actions.ActionSender;
+import net.gcnt.additionsplus.api.actions.ActionType;
 import net.gcnt.additionsplus.api.actions.AdditionsAction;
+import net.gcnt.additionsplus.api.actions.QueuedAction;
 import net.gcnt.additionsplus.api.files.AdditionsConfig;
 import net.gcnt.additionsplus.api.files.AdditionsFileAPI;
 import net.gcnt.additionsplus.api.managers.CommandManager;
@@ -9,9 +11,11 @@ import net.gcnt.additionsplus.api.objects.*;
 import net.gcnt.additionsplus.api.utils.AdditionsUtils;
 import net.gcnt.additionsplus.api.utils.NMS;
 import org.bukkit.Location;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.scoreboard.Scoreboard;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * The official AdditionsPlus API class.
@@ -38,6 +42,46 @@ public interface AdditionsAPI {
      * Load all AdditionsPlus data files.
      */
     void loadFiles();
+
+    /**
+     * Create a new custom action.
+     * Please note that this purely creates the action object and does NOT register it.
+     *
+     * @param plugin     {@link org.bukkit.plugin.java.JavaPlugin} plugin
+     * @param identifier Identifier of the action (must be unique).
+     * @param type       {@link ActionType} of the action.
+     * @param consumer   {@link Consumer} that is executed when the action is called.
+     * @return {@link AdditionsAction} with the entered data.
+     */
+    AdditionsAction createCustomAction(Plugin plugin, String identifier, ActionType type, Consumer<QueuedAction> consumer);
+
+    /**
+     * Create a new custom action.
+     * Please note that this purely creates the action object and does NOT register it.
+     *
+     * @param plugin      {@link org.bukkit.plugin.java.JavaPlugin} plugin
+     * @param identifier  Identifier of the action (must be unique).
+     * @param type        {@link ActionType} of the action.
+     * @param consumer    {@link Consumer} that is executed when the action is called.
+     * @param playersOnly Whether only players can perform this action.
+     * @param aliases     Optional list of aliases for this action.
+     * @return {@link AdditionsAction} with the entered data.
+     */
+    AdditionsAction createCustomAction(Plugin plugin, String identifier, ActionType type, Consumer<QueuedAction> consumer, boolean playersOnly, String... aliases);
+
+    /**
+     * Create a new custom event.
+     * Please note that this purely creates the event object and does NOT register it.
+     * The event identifier would be: <pluginName>:<eventName> (all lowercase).
+     *
+     * @param plugin      Main AdditionsPlus class.
+     * @param pluginName  Name of your plugin.
+     * @param eventName   Name of your event.
+     * @param author      Author of the event.
+     * @param description Description of the event.
+     * @return {@link AdditionsEvent} with the entered data.
+     */
+    AdditionsEvent createCustomEvent(AdditionsPlugin plugin, String pluginName, String eventName, String author, String description);
 
     /**
      * Register a custom event.
