@@ -11,6 +11,7 @@ import net.gcnt.additionsplus.api.objects.*;
 import net.gcnt.additionsplus.api.utils.AdditionsUtils;
 import net.gcnt.additionsplus.api.utils.NMS;
 import org.bukkit.Location;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scoreboard.Scoreboard;
 
@@ -143,6 +144,14 @@ public interface AdditionsAPI {
      * @return {@link AdditionsCommand} when found, null otherwise.
      */
     AdditionsCommand getCommandByAlias(String alias);
+
+    /**
+     * Get an {@link ActionSender} wrapper class object for the given sender.
+     *
+     * @param sender Console sender / player.
+     * @return {@link ActionSender} with the given sender data.
+     */
+    ActionSender getActionSender(CommandSender sender);
 
     /**
      * Get a {@link List} of similar {@link AdditionsCommand} that match the given command name.
