@@ -23,6 +23,7 @@ The AdditionsPlus API is hosted on our customly made NexusLite Maven Repository 
     <groupId>net.gcnt</groupId>
     <artifactId>additionsplus</artifactId>
     <version>[latest-version]</version>
+    <scope>provided</scope>
 </dependency>
 ```
 
