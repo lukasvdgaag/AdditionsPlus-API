@@ -7,6 +7,8 @@
 The official API for AdditionsPlus: Everything your Minecraft server needs, in one plugin.  
 Create custom commands, menus, items, scoreboards, tablists, (animated) nametags, and much more!  
 
+**[<u>Please check out the wiki here.</u>](https://github.com/lukasvdgaag/AdditionsPlus-API/wiki)**
+
 _Created by [GCNT](https://www.gcnt.net/)._
 
 ## Maven Dependency
