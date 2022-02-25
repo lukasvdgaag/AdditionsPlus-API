@@ -70,7 +70,7 @@ public abstract class BaseCmd {
      */
     public String sendUsage(boolean send) {
         String k = usage.equals("") ? "&7" : " &7";
-        String s = (plugin.getUtils().c("&send/" + mainCommand + " " + command + " " + usage + k + subUsage));
+        String s = (plugin.getUtils().c("&b/" + mainCommand + " " + command + " " + usage + k + subUsage));
         if (send) {
             sender.sendMessage(plugin.getUtils().c("&fUsage: " + s));
             return plugin.getUtils().c("&fUsage: " + s);
