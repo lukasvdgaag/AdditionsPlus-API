@@ -1,9 +1,41 @@
 package net.gcnt.additionsplus.api.files;
 
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.FileConfiguration;
+
 import java.io.BufferedReader;
 import java.io.File;
 
 public interface YAMLManager {
+
+    /**
+     * Get a YAMLConfig from a file.
+     *
+     * @param file {@link File} to get the YAML from.
+     * @param id   Identifier of the file.
+     * @return {@link YAMLConfig} of the given {@link File}.
+     */
+    YAMLConfig getConfig(File file, String id);
+
+    /**
+     * Load a Bukkit configuration section as Additions YAMLSection.
+     * The {@link YAMLSection} that is returned using this method cannot be used to save the file using {@link YAMLSection#save()}.
+     * If you wish to save the file too, please use {@link #getConfigSection(File, FileConfiguration, ConfigurationSection)}.
+     *
+     * @param section Bukkit section to load.
+     * @return {@link YAMLSection} when successful, null otherwise.
+     */
+    YAMLSection getConfigSection(ConfigurationSection section);
+
+    /**
+     * Load a Bukkit configuration section as Additions YAMLSection.
+     *
+     * @param file File to load from.
+     * @param baseYAML Bukkit base file configuration of the section.
+     * @param section  Bukkit section to load.
+     * @return {@link YAMLSection} when successful, null otherwise.
+     */
+    YAMLSection getConfigSection(File file, FileConfiguration baseYAML, ConfigurationSection section);
 
     /**
      * Load config or create it if nonexistent
@@ -19,7 +51,7 @@ public interface YAMLManager {
      * Load config or create it if nonexistent
      *
      * @param id        The internal ID of the config
-     * @param directory The sub-directory in which to place the config file when created
+     * @param directory The subdirectory in which to place the config file when created
      * @param fileName  The name of the file placed in the previously mentioned directory
      * @return A YAMLConfig instance based on the arguments provided
      */
@@ -29,7 +61,7 @@ public interface YAMLManager {
      * Load config or create it if nonexistent
      *
      * @param id         The internal ID of the config
-     * @param directory  The sub-directory in which to place the config file when created
+     * @param directory  The subdirectory in which to place the config file when created
      * @param fileName   The name of the file placed in the previously mentioned directory
      * @param defaultDir The internal directory from which to fetch the default file
      * @return A YAMLConfig instance based on the arguments provided

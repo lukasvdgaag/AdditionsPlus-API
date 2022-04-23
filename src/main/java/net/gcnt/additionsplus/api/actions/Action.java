@@ -7,93 +7,86 @@ import java.util.List;
 
 public enum Action {
 
-    EVERYONE(new ArrayList<>(), ActionType.COMBINED, false),
-    COMMAND(Lists.newArrayList("PLAYER"), ActionType.NORMAL, false),
-    MESSAGE(Lists.newArrayList("MSG"), ActionType.NORMAL, false),
-    CONSOLE(new ArrayList<>(), ActionType.NORMAL, false),
-    CENTER(new ArrayList<>(), ActionType.COMBINED, false),
-    TITLE(new ArrayList<>(), ActionType.INNER, true),
-    LANGUAGE(new ArrayList<>(), ActionType.INNER, true),
-    ACTIONBAR(Lists.newArrayList("ACTION"), ActionType.NORMAL, true),
-    JSON(Lists.newArrayList("JSONMESSAGE", "JSONMSG"), ActionType.NORMAL, true),
-    CONNECT(new ArrayList<>(), ActionType.NORMAL, true),
-    MONEY(new ArrayList<>(), ActionType.NORMAL, true),
-    SOUND(new ArrayList<>(), ActionType.NORMAL, true),
-    CUSTOMITEM(Lists.newArrayList("CITEM"), ActionType.NORMAL, true),
-    INFO(Lists.newArrayList("LOG"), ActionType.NORMAL, false),
-    SAFELANDING(new ArrayList<>(), ActionType.STANDALONE, true),
-    CUSTOMBOOK(Lists.newArrayList("CBOOK", "BOOK"), ActionType.NORMAL, true),
-    KICK(new ArrayList<>(), ActionType.NORMAL, true),
-    TELEPORT(Lists.newArrayList("TP"), ActionType.NORMAL, true),
-    FLY(new ArrayList<>(), ActionType.NORMAL, true),
-    ALLOWFLY(new ArrayList<>(), ActionType.NORMAL, true),
-    FOOD(new ArrayList<>(), ActionType.NORMAL, true),
-    HEALTH(new ArrayList<>(), ActionType.NORMAL, true),
-    MENU(Lists.newArrayList("CUSTOMMENU", "CMENU"), ActionType.NORMAL, true),
-    CLOSE(new ArrayList<>(), ActionType.STANDALONE, true),
-    DELAY(Lists.newArrayList("WAIT"), ActionType.INNER, false),
-    PERMISSION(new ArrayList<>(), ActionType.INNER, true),
-    VGROUP(Lists.newArrayList("VAULTGROUP"), ActionType.INNER, true),
-    CHANCE(new ArrayList<>(), ActionType.INNER, false),
-    RNG(Lists.newArrayList("RANDOMNUMBERGENERATOR", "RANDOMNUMBER"), ActionType.INNER, false),
-    MATH(Lists.newArrayList("CALCULATE", "CALC"), ActionType.OUTER, false),
-    TARGET(Lists.newArrayList("TARGETS"), ActionType.INNER, false),
-    KILL(new ArrayList<>(), ActionType.STANDALONE, true),
-    CLEAR(new ArrayList<>(), ActionType.STANDALONE, true),
-    CLEARCHAT(new ArrayList<>(), ActionType.STANDALONE, true),
-    WEATHER(new ArrayList<>(), ActionType.NORMAL, true),
-    TIME(new ArrayList<>(), ActionType.NORMAL, true),
-    PLAYERWEATHER(Lists.newArrayList("PWEATHER"), ActionType.NORMAL, true),
-    PLAYERTIME(Lists.newArrayList("PTIME"), ActionType.NORMAL, true),
-    GAMEMODE(Lists.newArrayList("GM"), ActionType.NORMAL, true),
-    SPEED(new ArrayList<>(), ActionType.NORMAL, true),
-    WALKSPEED(Lists.newArrayList("WSPEED"), ActionType.NORMAL, true),
-    FLYSPEED(Lists.newArrayList("FSPEED"), ActionType.NORMAL, true),
-    PRICE(new ArrayList<>(), ActionType.INNER, true),
-    GIVE(new ArrayList<>(), ActionType.NORMAL, true),
-    TAKE(new ArrayList<>(), ActionType.NORMAL, true),
-    CHAT(new ArrayList<>(), ActionType.NORMAL, false),
-    VANISH(new ArrayList<>(), ActionType.NORMAL, true),
+    EVERYONE(new ArrayList<>(), ActionType.COMBINED, false, false),
+    COMMAND(Lists.newArrayList("PLAYER"), ActionType.NORMAL, false, true),
+    MESSAGE(Lists.newArrayList("MSG"), ActionType.NORMAL, false, true),
+    CONSOLE(new ArrayList<>(), ActionType.NORMAL, false, true),
+    CENTER(new ArrayList<>(), ActionType.COMBINED, false, false),
+    TITLE(new ArrayList<>(), ActionType.INNER, true, true),
+    LANGUAGE(new ArrayList<>(), ActionType.INNER, true, false),
+    ACTIONBAR(Lists.newArrayList("ACTION"), ActionType.NORMAL, true, true),
+    JSON(Lists.newArrayList("JSONMESSAGE", "JSONMSG"), ActionType.NORMAL, true, true),
+    CONNECT(new ArrayList<>(), ActionType.NORMAL, true, true),
+    MONEY(new ArrayList<>(), ActionType.NORMAL, true, true),
+    SOUND(new ArrayList<>(), ActionType.NORMAL, true, true),
+    CUSTOMITEM(Lists.newArrayList("CITEM"), ActionType.NORMAL, true, true),
+    INFO(Lists.newArrayList("LOG"), ActionType.NORMAL, false, true),
+    SAFELANDING(new ArrayList<>(), ActionType.STANDALONE, true, true),
+    CUSTOMBOOK(Lists.newArrayList("CBOOK", "BOOK"), ActionType.NORMAL, true, true),
+    KICK(new ArrayList<>(), ActionType.NORMAL, true, true),
+    TELEPORT(Lists.newArrayList("TP"), ActionType.NORMAL, true, true),
+    FLY(new ArrayList<>(), ActionType.NORMAL, true, true),
+    ALLOWFLY(new ArrayList<>(), ActionType.NORMAL, true, true),
+    FOOD(new ArrayList<>(), ActionType.NORMAL, true, true),
+    HEALTH(new ArrayList<>(), ActionType.NORMAL, true, true),
+    MENU(Lists.newArrayList("CUSTOMMENU", "CMENU"), ActionType.NORMAL, true, true),
+    CLOSE(new ArrayList<>(), ActionType.STANDALONE, true, true),
+    DELAY(Lists.newArrayList("WAIT"), ActionType.INNER, false, false),
+    PERMISSION(new ArrayList<>(), ActionType.INNER, true, false),
+    VGROUP(Lists.newArrayList("VAULTGROUP"), ActionType.INNER, true, false),
+    CHANCE(new ArrayList<>(), ActionType.INNER, false, false),
+    RNG(Lists.newArrayList("RANDOMNUMBERGENERATOR", "RANDOMNUMBER"), ActionType.INNER, false, false),
+    MATH(Lists.newArrayList("CALCULATE", "CALC"), ActionType.OUTER, false, false),
+    TARGET(Lists.newArrayList("TARGETS"), ActionType.INNER, false, false),
+    KILL(new ArrayList<>(), ActionType.STANDALONE, true, true),
+    CLEAR(new ArrayList<>(), ActionType.STANDALONE, true, true),
+    CLEARCHAT(new ArrayList<>(), ActionType.STANDALONE, true, true),
+    WEATHER(new ArrayList<>(), ActionType.NORMAL, true, true),
+    TIME(new ArrayList<>(), ActionType.NORMAL, true, true),
+    PLAYERWEATHER(Lists.newArrayList("PWEATHER"), ActionType.NORMAL, true, true),
+    PLAYERTIME(Lists.newArrayList("PTIME"), ActionType.NORMAL, true, true),
+    GAMEMODE(Lists.newArrayList("GM"), ActionType.NORMAL, true, true),
+    SPEED(new ArrayList<>(), ActionType.NORMAL, true, true),
+    WALKSPEED(Lists.newArrayList("WSPEED"), ActionType.NORMAL, true, true),
+    FLYSPEED(Lists.newArrayList("FSPEED"), ActionType.NORMAL, true, true),
+    PRICE(new ArrayList<>(), ActionType.INNER, true, false),
+    GIVE(new ArrayList<>(), ActionType.NORMAL, true, true),
+    TAKE(new ArrayList<>(), ActionType.NORMAL, true, true),
+    CHAT(new ArrayList<>(), ActionType.NORMAL, false, true),
+    VANISH(new ArrayList<>(), ActionType.NORMAL, true, true),
 
-    TARGETWORLD(new ArrayList<>(), ActionType.INNER, false),
-    RESOUREPACK(Lists.newArrayList("TEXTUREPACK"), ActionType.NORMAL, true),
+    TARGETWORLD(new ArrayList<>(), ActionType.INNER, false, false),
+    RESOUREPACK(Lists.newArrayList("TEXTUREPACK"), ActionType.NORMAL, true, true),
 
-    NOPERMISSION(new ArrayList<>(), ActionType.INNER, false),
-    NOVGROUP(Lists.newArrayList("NOVAULTGROUP"), ActionType.INNER, true),
-    ISCONSOLE(new ArrayList<>(), ActionType.COMBINED, false),
-    ISPLAYER(new ArrayList<>(), ActionType.COMBINED, false),
-    WORLD(new ArrayList<>(), ActionType.INNER, true),
-    RETURN(new ArrayList<>(), ActionType.COMBINED, false),
-    IF(new ArrayList<>(), ActionType.INNER, false),
-    PLACEHOLDERS(new ArrayList<>(), ActionType.INNER, true),
-    DISCORD(new ArrayList<>(), ActionType.NORMAL, false),
-    REGEX(new ArrayList<>(), ActionType.INNER, false),
-    SCRIPT(new ArrayList<>(), ActionType.OUTER, false),
-    HTTPREQUEST(new ArrayList<>(), ActionType.INNER, false),
-    OPERATOR(Lists.newArrayList("OP"), ActionType.NORMAL, true),
-    RENAMEITEM(Lists.newArrayList("RENAME"), ActionType.NORMAL, true),
-    HOLDSITEM(new ArrayList<>(), ActionType.INNER, true),
+    NOPERMISSION(new ArrayList<>(), ActionType.INNER, false, false),
+    NOVGROUP(Lists.newArrayList("NOVAULTGROUP"), ActionType.INNER, true, false),
+    ISCONSOLE(new ArrayList<>(), ActionType.COMBINED, false, false),
+    ISPLAYER(new ArrayList<>(), ActionType.COMBINED, false, false),
+    WORLD(new ArrayList<>(), ActionType.INNER, true, false),
+    RETURN(new ArrayList<>(), ActionType.COMBINED, false, false),
+    IF(new ArrayList<>(), ActionType.INNER, false, false),
+    PLACEHOLDERS(new ArrayList<>(), ActionType.INNER, true, false),
+    DISCORD(new ArrayList<>(), ActionType.NORMAL, false, true),
+    REGEX(new ArrayList<>(), ActionType.INNER, false, false),
+    SCRIPT(new ArrayList<>(), ActionType.OUTER, false, false),
+    HTTPREQUEST(new ArrayList<>(), ActionType.INNER, false, true),
+    OPERATOR(Lists.newArrayList("OP"), ActionType.NORMAL, true, true),
+    RENAMEITEM(Lists.newArrayList("RENAME"), ActionType.NORMAL, true, true),
+    HOLDSITEM(new ArrayList<>(), ActionType.INNER, true, false),
 
-    HASEXPERIENCE(Lists.newArrayList("HASEXP", "HASXP"), ActionType.INNER, true),
-    EXPERIENCE(Lists.newArrayList("EXP", "XP"), ActionType.NORMAL, true),
-    HASLEVELS(Lists.newArrayList("HASLEVEL", "HASLVL"), ActionType.INNER, true),
-    LEVELS(Lists.newArrayList("LEVEL", "LVL"), ActionType.NORMAL, true);
+    HASEXPERIENCE(Lists.newArrayList("HASEXP", "HASXP"), ActionType.INNER, true, false),
+    EXPERIENCE(Lists.newArrayList("EXP", "XP"), ActionType.NORMAL, true, true),
+    HASLEVELS(Lists.newArrayList("HASLEVEL", "HASLVL"), ActionType.INNER, true, false),
+    LEVELS(Lists.newArrayList("LEVEL", "LVL"), ActionType.NORMAL, true, true);
 
     final ActionType type;
-    List<String> aliases = new ArrayList<>();
-    boolean requirePlayer = true;
+    final List<String> aliases;
+    final boolean requirePlayer;
     AdditionsAction additionsAction = null;
+    final boolean isBaseAction;
 
-    Action(ActionType type) {
-        this.type = type;
-    }
-
-    Action(List<String> aliases, ActionType type) {
-        this.aliases = aliases;
-        this.type = type;
-    }
-
-    Action(List<String> aliases, ActionType type, boolean playersOnly) {
+    Action(List<String> aliases, ActionType type, boolean playersOnly, boolean isBaseAction) {
+        this.isBaseAction = isBaseAction;
         this.aliases = aliases;
         this.aliases.add(this.name());
         this.type = type;
@@ -118,5 +111,9 @@ public enum Action {
 
     public List<String> getAliases() {
         return aliases;
+    }
+
+    public boolean isBaseAction() {
+        return isBaseAction;
     }
 }

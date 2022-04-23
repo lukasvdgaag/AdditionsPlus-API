@@ -1,6 +1,7 @@
 package net.gcnt.additionsplus.api.files;
 
 import net.gcnt.additionsplus.api.items.ItemOption;
+import net.gcnt.additionsplus.api.objects.AdditionsItem;
 import net.gcnt.additionsplus.api.utils.Message;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -196,6 +197,15 @@ public interface YAMLSection {
      * @return YAML section when found, null otherwise.
      */
     YAMLSection getSection(String property);
+
+    /**
+     * Get the {@link AdditionsItem} from the current section.
+     * This searches the entire section for usable options.
+     *
+     * @param identifier The identifier of the item.
+     * @return {@link AdditionsItem} when found, null otherwise.
+     */
+    AdditionsItem getItem(String identifier);
 
     /**
      * Get a {@link HashMap} of {@link Enchantment} and their strengths.

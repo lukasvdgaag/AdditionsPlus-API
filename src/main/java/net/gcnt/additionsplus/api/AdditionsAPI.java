@@ -6,6 +6,7 @@ import net.gcnt.additionsplus.api.actions.AdditionsAction;
 import net.gcnt.additionsplus.api.actions.QueuedAction;
 import net.gcnt.additionsplus.api.files.AdditionsConfig;
 import net.gcnt.additionsplus.api.files.AdditionsFileAPI;
+import net.gcnt.additionsplus.api.files.YAMLSection;
 import net.gcnt.additionsplus.api.managers.CommandManager;
 import net.gcnt.additionsplus.api.objects.*;
 import net.gcnt.additionsplus.api.utils.AdditionsUtils;
@@ -168,6 +169,15 @@ public interface AdditionsAPI {
      * @return A {@link List} of {@link AdditionsItem}.
      */
     List<AdditionsItem> getCustomItems();
+
+    /**
+     * Get an {@link AdditionsItem} from a {@link YAMLSection}.
+     *
+     * @param configSection  Section to get the item from.
+     * @param itemIdentifier Identifier of the item.
+     * @return {@link AdditionsItem} when available, null otherwise.
+     */
+    AdditionsItem getItemFromFile(YAMLSection configSection, String itemIdentifier);
 
     /**
      * Get the current config.yml file.

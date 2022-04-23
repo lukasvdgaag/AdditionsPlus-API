@@ -77,4 +77,11 @@ public interface AdditionsAction {
      */
     String removeTagFromString(String actionString);
 
+    /**
+     * Check if this action is a base action.
+     *
+     * @return true if it is a base action, false otherwise.
+     */
+    boolean isBaseAction();
+
 }
