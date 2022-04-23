@@ -12,7 +12,7 @@ public enum Action {
     MESSAGE(Lists.newArrayList("MSG"), ActionType.NORMAL, false),
     CONSOLE(new ArrayList<>(), ActionType.NORMAL, false),
     CENTER(new ArrayList<>(), ActionType.COMBINED, false),
-    TITLE(new ArrayList<>(), ActionType.NORMAL, true),
+    TITLE(new ArrayList<>(), ActionType.INNER, true),
     LANGUAGE(new ArrayList<>(), ActionType.INNER, true),
     ACTIONBAR(Lists.newArrayList("ACTION"), ActionType.NORMAL, true),
     JSON(Lists.newArrayList("JSONMESSAGE", "JSONMSG"), ActionType.NORMAL, true),

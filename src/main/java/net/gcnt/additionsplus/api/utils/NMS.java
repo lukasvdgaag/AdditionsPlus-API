@@ -1,5 +1,6 @@
 package net.gcnt.additionsplus.api.utils;
 
+import net.gcnt.additionsplus.api.objects.AdditionsNameTag;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -62,6 +63,14 @@ public interface NMS {
      * @param player Player to update the tablist for.
      */
     void changeTab(Player player);
+
+    /**
+     * Update the player's name tag.
+     * @param player Player to update tag of.
+     * @param nametag NameTag to apply.
+     * @param value Current tag value to apply.
+     */
+    void updatePlayerNameTag(Player player, AdditionsNameTag nametag, String value);
 
     /**
      * Check if an ItemStack is a custom AdditionsPlus item.

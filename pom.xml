@@ -6,7 +6,7 @@
 
     <groupId>net.gcnt</groupId>
     <artifactId>additionsplus</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
     <name>AdditionsPlus API</name>
     <url>https://www.gcnt.net/additionsplus</url>
@@ -26,6 +26,13 @@
                 <configuration>
                     <failOnError>false</failOnError>
                     <reportOutputDirectory>./javadocs/${project.version}</reportOutputDirectory>
+                    <nonavbar>false</nonavbar>
+                    <author>true</author>
+                    <defaultAuthor>GCNT</defaultAuthor>
+                    <description>The official API for AdditionsPlus: Everything your Minecraft server needs, in one plugin.\n
+                        Create custom commands, menus, items, scoreboards, tablists, (animated) nametags, and much more!</description>
+                    <doctitle>AdditionsPlus API v${project.version}</doctitle>
+                    <windowtitle>AdditionsPlus API v${project.version} | By GCNT</windowtitle>
                 </configuration>
             </plugin>
         </plugins>
