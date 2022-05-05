@@ -40,6 +40,23 @@ public interface Message {
     void sendTitle(Player... players);
 
     /**
+     * Set whether placeholders should be parsed.
+     *
+     * @param parse Whether placeholders should be parsed.
+     * @return Current {@link Message}.
+     */
+    Message placeholders(boolean parse);
+
+    /**
+     * Set the player for whom the placeholders should be parsed.
+     * Set this to null to keep the players you're sending the message to.
+     *
+     * @param owner The player for whom the placeholders should be parsed.
+     * @return Current {@link Message}.
+     */
+    Message placeholderOwner(Player owner);
+
+    /**
      * Send this message as a title.
      *
      * @param in      The fade-in time in ticks.
