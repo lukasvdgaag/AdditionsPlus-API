@@ -4,7 +4,9 @@ import net.gcnt.additionsplus.api.actions.ActionQueuer;
 import net.gcnt.additionsplus.api.actions.ActionUtils;
 import net.gcnt.additionsplus.api.actions.AdditionsAction;
 import net.gcnt.additionsplus.api.files.YAMLManager;
+import net.gcnt.additionsplus.api.managers.AnimationManager;
 import net.gcnt.additionsplus.api.managers.CustomMenuManager;
+import net.gcnt.additionsplus.api.nms.NMS;
 import net.gcnt.additionsplus.api.objects.AdditionsEvent;
 import net.gcnt.additionsplus.api.utils.*;
 import org.bukkit.entity.Player;
@@ -214,5 +216,13 @@ public interface AdditionsPlugin {
      * @return The ItemFlag setup menu.
      */
     AdditionsSubMenu getItemFlagMenu();
+
+    /**
+     * Get the {@link AnimationManager} that allows you to register animations.
+     *
+     * @since 1.0.3
+     * @return The {@link AnimationManager}.
+     */
+    AnimationManager getAnimationManager();
 
 }

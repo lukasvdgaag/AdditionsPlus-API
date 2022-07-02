@@ -158,4 +158,18 @@ public interface AdditionsFileAPI {
      */
     void setTablistsFile(YAMLConfig config);
 
+    /**
+     * Set the animations file.
+     *
+     * @param config New {@link YAMLConfig} file.
+     */
+    void setAnimationsFile(YAMLConfig config);
+
+    /**
+     * Get the animations file.
+     *
+     * @return Current {@link YAMLConfig} file.
+     */
+    YAMLConfig getAnimationsFile();
+
 }

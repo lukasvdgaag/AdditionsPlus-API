@@ -7,10 +7,11 @@ import net.gcnt.additionsplus.api.actions.QueuedAction;
 import net.gcnt.additionsplus.api.files.AdditionsConfig;
 import net.gcnt.additionsplus.api.files.AdditionsFileAPI;
 import net.gcnt.additionsplus.api.files.YAMLSection;
+import net.gcnt.additionsplus.api.managers.AnimationManager;
 import net.gcnt.additionsplus.api.managers.CommandManager;
 import net.gcnt.additionsplus.api.objects.*;
 import net.gcnt.additionsplus.api.utils.AdditionsUtils;
-import net.gcnt.additionsplus.api.utils.NMS;
+import net.gcnt.additionsplus.api.nms.NMS;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
@@ -334,5 +335,13 @@ public interface AdditionsAPI {
      */
     @Deprecated
     Scoreboard getSortedTablist();
+
+    /**
+     * Get the {@link AnimationManager} that allows you to register animations.
+     *
+     * @since 1.0.3
+     * @return The {@link AnimationManager}.
+     */
+    AnimationManager getAnimationManager();
 
 }

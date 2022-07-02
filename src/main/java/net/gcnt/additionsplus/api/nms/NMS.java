@@ -1,8 +1,10 @@
-package net.gcnt.additionsplus.api.utils;
+package net.gcnt.additionsplus.api.nms;
 
 import net.gcnt.additionsplus.api.objects.AdditionsNameTag;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
+import java.lang.reflect.Method;
 
 /**
  * Interface class for handling version based Minecraft methods.
@@ -16,6 +18,14 @@ public interface NMS {
      * @return {@link Integer} - version of the server API used
      */
     int getVersion();
+
+    /**
+     * Get the version Scoreboard Team packet fields to use.
+     *
+     * @since 1.0.3
+     * @return {@link SBPacketData} - the version specific fields
+     */
+    SBPacketData getPacketData();
 
     /**
      * Send a title to a player.
@@ -66,11 +76,21 @@ public interface NMS {
 
     /**
      * Update the player's name tag.
-     * @param player Player to update tag of.
+     *
+     * @param player  Player to update tag of.
      * @param nametag NameTag to apply.
-     * @param value Current tag value to apply.
+     * @param value   Current tag value to apply.
      */
     void updatePlayerNameTag(Player player, AdditionsNameTag nametag, String value);
+
+    /**
+     * Update the player's prefix and suffix.
+     *
+     * @param player  Player to update prefix and suffix of.
+     * @param nametag NameTag to apply.
+     * @since 1.0.3
+     */
+    void updatePlayerPrefix(Player player, AdditionsNameTag nametag);
 
     /**
      * Check if an ItemStack is a custom AdditionsPlus item.
@@ -126,5 +146,60 @@ public interface NMS {
      */
     ItemStack addNBTTag(ItemStack itemStack, String key, String value);
 
+    void setItemStackClass(Class<?> itemStackClass);
+
+    void setHasTag(Method hasTag);
+
+    void setGetTag(Method getTag);
+
+    void setSetTag(Method setTag);
+
+    void setNbtTagCompoundClass(Class<?> nbtTagCompoundClass);
+
+    void setHasKey(Method hasKey);
+
+    void setSetKeyString(Method setKeyString);
+
+    void setSetKeyInteger(Method setKeyInteger);
+
+    void setGetKeyString(Method getKeyString);
+
+    void setCraftItemStackClass(Class<?> craftItemStackClass);
+
+    void setAsNMSCopy(Method asNMSCopy);
+
+    void setAsBukkitCopy(Method asBukkitCopy);
+
+    void setPlayerConnectionClass(Class<?> playerConnectionClass);
+
+    void setEntityPlayerClass(Class<?> entityPlayerClass);
+
+    void setGetHandle(Method getHandle);
+
+    void setCraftServerClass(Class<?> craftServerClass);
+
+    void setCraftPlayerClass(Class<?> craftPlayerClass);
+
+    void setSendPacket(Method sendPacket);
+
+    void setiChatBaseComponentClass(Class<?> iChatBaseComponentClass);
+
+    void setChatSerializerClass(Class<?> chatSerializerClass);
+
+    void setPacketPlayOutTitle(Class<?> packetPlayOutTitle);
+
+    void setPacketPlayOutChat(Class<?> packetPlayOutChat);
+
+    void setTitleAction(Class<Enum> titleAction);
+
+    void setPacketPlayOutPlayerInfo(Class<?> packetPlayOutPlayerInfo);
+
+    void setInfoAction(Class<Enum> infoAction);
+
+    void setPacketPlayOutPlayerListHeaderFooter(Class<?> packetPlayOutPlayerListHeaderFooter);
+
+    void setDedicatedPlayerListClass(Class<?> dedicatedPlayerListClass);
+
+    void setChatComponentTextClass(Class<?> chatComponentTextClass);
 
 }

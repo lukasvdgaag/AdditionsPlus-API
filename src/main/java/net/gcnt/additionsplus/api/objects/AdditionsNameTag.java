@@ -1,5 +1,7 @@
 package net.gcnt.additionsplus.api.objects;
 
+import net.gcnt.additionsplus.api.utils.AdditionsAnimation;
+
 /**
  * Custom AdditionsPlus Name Tag class.
  * Periodically update (animated) name tags based on groups.
@@ -24,9 +26,9 @@ public interface AdditionsNameTag {
     /**
      * Get the name tag value.
      *
-     * @return {@link java.util.List} of {@link String} when animated, single {@link String} otherwise.
+     * @return {@link AdditionsAnimation} that contains the frames.
      */
-    Object getTag();
+    AdditionsAnimation getTag();
 
     /**
      * Get the identifier of this name tag (group).
@@ -48,5 +50,26 @@ public interface AdditionsNameTag {
      * @return true when enabled, false otherwise.
      */
     boolean isChangeDisplayName();
+
+    /**
+     * Get whether to change the display name above the player's head.
+     *
+     * @return true when enabled, false otherwise.
+     */
+    boolean isChangeAbovePlayerName();
+
+    /**
+     * Get the player name prefix.
+     *
+     * @return {@link AdditionsAnimation} that contains the frames.
+     */
+    AdditionsAnimation getPrefix();
+
+    /**
+     * Get the player name suffix.
+     *
+     * @return {@link AdditionsAnimation} that contains the frames.
+     */
+    AdditionsAnimation getSuffix();
 
 }
