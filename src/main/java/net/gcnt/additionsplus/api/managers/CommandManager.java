@@ -6,11 +6,26 @@ import net.gcnt.additionsplus.api.objects.AdditionsItem;
 import net.gcnt.additionsplus.api.objects.AdditionsMenu;
 import org.bukkit.event.Cancellable;
 
+import java.util.List;
+
 /**
  * AdditionsPlus custom command manager.
  * Also manages cooldowns of items and menus.
  */
 public interface CommandManager {
+
+    /**
+     * Get a list of all custom commands.
+     * @return List of {@link AdditionsCommand}.
+     */
+    List<AdditionsCommand> getCustomCommands();
+
+    /**
+     * Load in all custom commands.
+     *
+     * @param commands List of {@link AdditionsCommand}.
+     */
+    void setCustomCommands(List<AdditionsCommand> commands);
 
     /**
      * Get the command cooldown of a sender.
