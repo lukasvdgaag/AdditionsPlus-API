@@ -9,6 +9,7 @@ import net.gcnt.additionsplus.api.files.AdditionsFileAPI;
 import net.gcnt.additionsplus.api.files.YAMLSection;
 import net.gcnt.additionsplus.api.managers.AnimationManager;
 import net.gcnt.additionsplus.api.managers.CommandManager;
+import net.gcnt.additionsplus.api.managers.TabCompletionManager;
 import net.gcnt.additionsplus.api.objects.*;
 import net.gcnt.additionsplus.api.utils.AdditionsUtils;
 import net.gcnt.additionsplus.api.nms.NMS;
@@ -343,5 +344,13 @@ public interface AdditionsAPI {
      * @return The {@link AnimationManager}.
      */
     AnimationManager getAnimationManager();
+
+    /**
+     * Get the {@link TabCompletionManager} that manages all tab completions for custom commands.
+     *
+     * @since 1.0.4
+     * @return The {@link TabCompletionManager}
+     */
+    TabCompletionManager getTabCompletionManager();
 
 }
