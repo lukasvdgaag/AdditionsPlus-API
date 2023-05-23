@@ -11,6 +11,8 @@ Create custom commands, menus, items, scoreboards, tablists, (animated) nametags
 
 _Created by [GCNT](https://www.gcnt.net/)._
 
+**_This repository will soon be removed as it has been moved to [Devmart AdditionsPlus API](https://github.com/dev-mart/AdditionsPlus-API)_**
+
 ## Maven Dependency
 ![APIversionImg](https://img.shields.io/nexus/gcnt/net.gcnt/additionsplus?server=https%3A%2F%2Fnexuslite.gcnt.net&label=Latest%20version)  
 The AdditionsPlus API is hosted on our customly made NexusLite Maven Repository Manager, which can be found [here](https://nexuslite.gcnt.net/). The latest version of the API is listed above.
